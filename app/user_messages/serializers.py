@@ -1,8 +1,9 @@
 from rest_framework import serializers
+from core.serializers import CompanySafeSerializerMixin
 from .models import UserMessage
 
 
-class UserMessageSerializer(serializers.HyperlinkedModelSerializer):
+class UserMessageSerializer(CompanySafeSerializerMixin, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = UserMessage
         fields = (

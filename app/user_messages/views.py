@@ -6,10 +6,8 @@ from .models import UserMessage
 
 
 class UserMessageList(generics.ListCreateAPIView):
-    name = 'usermessage-list'
-    permission_classes = (
-        permissions.IsAuthenticated,
-    )
+    name = "usermessage-list"
+    permission_classes = (permissions.IsAuthenticated,)
     serializer_class = serializers.UserMessageSerializer
     queryset = UserMessage.objects.all()
 
@@ -23,10 +21,8 @@ class UserMessageList(generics.ListCreateAPIView):
 
 
 class UserMessageDetail(generics.RetrieveAPIView):
-    name = 'usermessage-detail'
-    permission_classes = (
-       permissions.IsAuthenticated,
-    )
+    name = "usermessage-detail"
+    permission_classes = (permissions.IsAuthenticated,)
     serializer_class = serializers.UserMessageSerializer
     queryset = UserMessage.objects.all()
 
